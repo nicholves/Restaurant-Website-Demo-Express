@@ -1,0 +1,58 @@
+head
+  title Home Page
+  style.
+    .column {
+    float: left;
+    }
+    .left{
+    width: 10%;
+    }
+    .right {
+    width: 25%;
+    }
+    .middle {
+    width: 65%;
+    }
+    .marginMiddle {
+    text-align: center;
+    width: 75%;
+    }
+    .marginRight {
+    float: right;
+    width: 25%;
+    text-align: right;
+    }
+    .spaced {
+        margin-left: 1em;
+    }
+body
+    header
+        div(class="marginMiddle")
+            a(href="http://localhost:3000/") Home
+            |  
+            a(href="http://localhost:3000/users" class="spaced") Users    
+            |  
+            a(href="http://localhost:3000/order" class="spaced") Order Form    
+            div(class="marginRight")
+                a(href="http://localhost:3000/my-profile") My Profile  
+                button(id="logoutbtn" class="spaced" value="Submit") Logout
+                script(src="http://localhost:3000/logout.js" onload="init()")
+        
+
+    -let profile = JSON.parse(data);
+    h1=profile.username
+    br
+    label Privacy:
+    if profile.privacy
+        input(type="checkbox" name="private" id="privacyCheckbox" checked="true")
+    else
+        input(type="checkbox" name="private" id="privacyCheckbox")
+    br
+    button(id="saveButton") Save
+    script(src="http://localhost:3000/updateUser.js" onload="init()")
+
+    h2 Purchases 
+    ol(type="1")
+        -for (let order in profile.orders)
+            li
+                a(href="http://localhost:3000/orders/" + profile.orders[order])=profile.orders[order]

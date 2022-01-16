@@ -1,0 +1,64 @@
+head
+  title Home Page
+  style.
+    .column {
+    float: left;
+    }
+    .left{
+    width: 10%;
+    }
+    .right {
+    width: 25%;
+    }
+    .middle {
+    width: 65%;
+    }
+    .marginMiddle {
+    text-align: center;
+    width: 75%;
+    }
+    .marginRight {
+    float: right;
+    width: 25%;
+    text-align: right;
+    }
+    .spaced {
+        margin-left: 1em;
+    }
+body
+    header
+        -if (loggedIn)
+            div(class="marginMiddle")
+                a(href="http://localhost:3000/") Home
+                |  
+                a(href="http://localhost:3000/users" class="spaced") Users    
+                |  
+                a(href="http://localhost:3000/order" class="spaced") Order Form    
+                div(class="marginRight")
+                    a(href="http://localhost:3000/my-profile") My Profile  
+                    button(id="logoutbtn" class="spaced" value="Submit") Logout
+                    script(src="http://localhost:3000/logout.js" onload="init()")
+        -else
+            div(class="marginMiddle spaced")
+                a(href="http://localhost:3000/") Home    
+                |  
+                a(href="http://localhost:3000/users" class="spaced") Users    
+                |  
+                a(href="http://localhost:3000/registration" class="spaced") Register   
+                |
+                div(class="marginRight")
+                    a(href="http://localhost:3000/login") Login
+
+    br
+    input(type="text" id="searchBox")
+    br
+    br
+    button(id="search") Search
+    br
+    br
+    br
+
+    script(src="users.js" onload="init()")
+
+    div(id="results")
+

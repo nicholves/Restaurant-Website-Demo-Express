@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            .column {
+                float: left;
+            }
+
+            .left{
+                width: 10%;
+            }
+            
+            .right {
+                width: 25%;
+            }
+
+            .middle {
+                width: 65%;
+            }
+            .marginMiddle {
+                text-align: center;
+                width: 75%;
+            }
+            .marginRight {
+                float: right;
+                width: 25%;
+                text-align: right;
+            }
+            .spaced {
+                margin-left: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="marginMiddle spaced"><a href="http://localhost:3000/">Home </a> <a class="spaced" href="http://localhost:3000/users">Users </a> <a class="spaced" href="http://localhost:3000/registration">Register </a>
+                <div class="marginRight"><a href="http://localhost:3000/login">Login</a></div>
+            </div>
+        </header>
+        <label>Username: </label>
+        <input type="text" id="username">
+        <br>
+        <label>Password: </label>
+        <input type="text" id="password">
+        <br>
+        <br>
+        <button id="login">Login</button>
+        <script src="login.js" onload="init()"></script>
+    </body>
+</html>
