@@ -12,7 +12,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 app.set("view engine", "pug");
 
 let mongoStore = new MongoDBStore({
-    uri: "mongodb://localhost:27017/restaurant",
+    uri: "mongodb://localhost:27017/a4",
     collection: "sessiondata"
 })
 
@@ -302,7 +302,7 @@ function renderOneOrder(req, res) {
     });
 }
 
-mongoose.connect('mongodb://localhost/restaurant', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/a4', {useNewUrlParser: true});
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
